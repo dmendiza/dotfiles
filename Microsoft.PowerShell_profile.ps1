@@ -1,6 +1,9 @@
 # Set default location to Workspaces
 Set-Location $env:WORKSPACES
 
+# Import Modules
+Import-Module Pscx
+
 # Aliases
 Set-Alias npp "C:\Program Files (x86)\Notepad++\notepad++.exe"
 Set-Alias vi "C:\Program Files (x86)\Vim\vim73\vim.exe"
