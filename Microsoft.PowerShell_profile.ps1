@@ -9,6 +9,17 @@ Set-Alias npp "C:\Program Files (x86)\Notepad++\notepad++.exe"
 Set-Alias vi "C:\Program Files (x86)\Vim\vim73\vim.exe"
 Set-Alias which Get-Command
 
+# Set environment variables for Visual Studio Command Prompt
+pushd "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC"
+cmd /c "vcvarsall.bat&set" |
+foreach {
+    if ($_ -match "=") {
+        $v = $_.split("="); Set-Item -force -path "env:\$($v[0])" -value "$($v[1])"
+    }
+}
+popd
+Write-Host "Visual Studio 2010 Command Prompt variables set."
+
 # sudo
 function Elevate-Process
 {
