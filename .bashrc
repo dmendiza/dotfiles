@@ -1,20 +1,21 @@
-# python virtualenv
-source /usr/local/bin/virtualenvwrapper.sh 
-PATH=$PATH:~/dev/tools/idea-IU-107.105/bin:~/dev/tools/springsource/sts-2.6.1.SR1
-export PATH
-JDK_HOME="/usr/lib/jvm/java-6-sun/"
-export JDK_HOME
-JAVA_HOME="/usr/lib/jvm/java-6-sun/"
-export JAVA_HOME
-M2_HOME=/usr/share/maven2
-export M2_HOME
-
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
+
+#-----------------------
+# Environment Variables
+#-----------------------
+
+# Java
+export JAVA_HOME=/usr/lib/jvm/java-6-sun
+export M2_HOME=/usr/share/maven2
+
+# Python
+export WORKON_HOME=~/virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh 
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
