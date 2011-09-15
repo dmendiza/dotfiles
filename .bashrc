@@ -11,11 +11,46 @@
 
 # Java
 export JAVA_HOME=/usr/lib/jvm/java-6-sun
+
+# Maven
 export M2_HOME=/usr/share/maven2
+export M2=$M2_HOME/bin
+PATH="$M2:$PATH"
+
+# Gradle
+export GRADLE_HOME=/usr/local/lib/gradle
+PATH="$GRADLE_HOME/bin:$PATH"
+
+# Android Tools
+export ANDROID_TOOLS=/usr/local/lib/android
+PATH="$ANDROID_TOOLS:$PATH"
+
+# Scala
+export SCALA_HOME=/usr/local/lib/scala
+PATH="$SCALA_HOME:$PATH/bin"
+
+# Amazon EC2 tools
+export EC2_HOME=/usr/local/lib/ec2-api-tools
+export EC2_PRIVATE_KEY=~/.ec2/pk-EWFUIX4BAV6TLUED6K67VSUEHOAEZF3Q.pem
+export EC2_CERT=~/.ec2/pk-EWFUIX4BAV6TLUED6K67VSUEHOAEZF3Q.pem 
+PATH="$EC2_HOME:$PATH"
+
+export PATH
 
 # Python
 export WORKON_HOME=~/virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh 
+
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+# Denim Group
+DJANGO_LIBRARY_HOME=~/Workspaces/DenimGroup/DjangoLibrary
+export DJANGO_LIBRARY_HOME
+
+#---------------
+# Bash Settings
+#---------------
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -90,6 +125,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
+alias ls='ls -G'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -113,3 +149,10 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+#--------------
+# Mac Settings
+#--------------
+
+# MacPorts
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
