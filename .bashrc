@@ -10,7 +10,7 @@
 #-----------------------
 
 # Java
-export JAVA_HOME=/usr/lib/jvm/java-6-sun
+export JAVA_HOME=/usr/local/lib/java
 
 # Maven
 export M2_HOME=/usr/share/maven2
@@ -22,8 +22,10 @@ export GRADLE_HOME=/usr/local/lib/gradle
 PATH="$GRADLE_HOME/bin:$PATH"
 
 # Android Tools
-export ANDROID_TOOLS=/usr/local/lib/android
-PATH="$ANDROID_TOOLS:$PATH"
+export ANDROID_HOME=/usr/local/lib/android
+export ANDROID_TOOLS=$ANDROID_HOME/tools
+export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
+PATH="$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$PATH"
 
 # Scala
 export SCALA_HOME=/usr/local/lib/scala
@@ -34,6 +36,10 @@ export EC2_HOME=/usr/local/lib/ec2-api-tools
 export EC2_PRIVATE_KEY=~/.ec2/pk-EWFUIX4BAV6TLUED6K67VSUEHOAEZF3Q.pem
 export EC2_CERT=~/.ec2/pk-EWFUIX4BAV6TLUED6K67VSUEHOAEZF3Q.pem 
 PATH="$EC2_HOME:$PATH"
+
+# node.js
+export PATH=$HOME/local/node/bin:$PATH
+export NODE_PATH=$HOME/local/node:$HOME/local/node/lib/node_modules
 
 export PATH
 
