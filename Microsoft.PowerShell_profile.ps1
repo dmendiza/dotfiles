@@ -1,16 +1,10 @@
-# Set default location to Workspaces
-Set-Location $env:WORKSPACES
-
-# Import Modules
-Import-Module Pscx
-
 # Aliases
 Set-Alias npp "C:\Program Files (x86)\Notepad++\notepad++.exe"
 Set-Alias vi "C:\Program Files (x86)\Vim\vim73\vim.exe"
 Set-Alias which Get-Command
 
 # Set environment variables for Visual Studio Command Prompt
-pushd "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC"
+pushd "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC"
 cmd /c "vcvarsall.bat&set" |
 foreach {
     if ($_ -match "=") {
@@ -18,7 +12,7 @@ foreach {
     }
 }
 popd
-Write-Host "Visual Studio 2010 Command Prompt variables set."
+Write-Host "Visual Studio 2012 Command Prompt variables set."
 
 # sudo
 function Elevate-Process
