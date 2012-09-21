@@ -1,5 +1,7 @@
 # Aliases
 Set-Alias npp "C:\Program Files (x86)\Notepad++\notepad++.exe"
+Set-Alias python3 "C:\Program Files\Python32\python.exe"
+Set-Alias pip3 "C:\Program Files\Python32\Scripts\pip.exe"
 Set-Alias vi "C:\Program Files (x86)\Vim\vim73\vim.exe"
 Set-Alias which Get-Command
 
@@ -25,3 +27,8 @@ function Elevate-Process
     [System.Diagnostics.Process]::Start($psi);
 }
 Set-Alias sudo Elevate-Process;
+
+# If Posh-Git environment is defined, load it.
+if (test-path env:posh_git) {
+    . $env:posh_git
+}
