@@ -1,6 +1,8 @@
 # ~/.bash_aliases: alias file loaded by .bashrc
 
 alias vi=vim
+alias git=hub
 
-alias syn='/usr/local/bin/synergyc -n beast 192.168.1.101'
-alias synw='/usr/local/bin/synergyc -n beast satoffice078'
+alias barb='cd ~/Workspaces/CloudKeep/barbican; workon barbican'
+alias gs='git status'
+alias gu='git fetch upstream master'
