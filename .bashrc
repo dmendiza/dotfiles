@@ -16,44 +16,36 @@ esac
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 
 # Maven
-export M2_HOME=/usr/share/maven2
+export M2_HOME=/usr/local/share/maven2
 export M2=$M2_HOME/bin
-PATH="$M2:$PATH"
+PATH="$PATH:$M2"
 
 # Gradle
 export GRADLE_HOME=/usr/local/lib/gradle
-PATH="$GRADLE_HOME/bin:$PATH"
+PATH="$PATH:$GRADLE_HOME/bin"
 
 # Android Tools
 export ANDROID_HOME=/usr/local/lib/android
 export ANDROID_TOOLS=$ANDROID_HOME/tools
 export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
-PATH="$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$PATH"
+PATH="$PATH:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS"
 
 # Scala
 export SCALA_HOME=/usr/local/lib/scala
-PATH="$SCALA_HOME:$PATH/bin"
-
-# Amazon EC2 tools
-export EC2_HOME=/usr/local/lib/ec2-api-tools
-export EC2_PRIVATE_KEY=~/.ec2/pk-EWFUIX4BAV6TLUED6K67VSUEHOAEZF3Q.pem
-export EC2_CERT=~/.ec2/pk-EWFUIX4BAV6TLUED6K67VSUEHOAEZF3Q.pem 
-PATH="$EC2_HOME:$PATH"
+PATH="$PATH:$SCALA_HOME/bin"
 
 # node.js
-export PATH=$HOME/local/node/bin:$PATH
+export PATH=$PATH:$HOME/local/node/bin
 export NODE_PATH=$HOME/local/node:$HOME/local/node/lib/node_modules
 
 export PATH
 
 # Python
-[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh 
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+export CONFIGURE_OPTS='--enable-shared'
 
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# Ruby
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 #---------------
 # Bash Settings
@@ -135,14 +127,17 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+# Enable color support on mac
+export CLICOLOR=1
+#export LSCOLORS=ExFxBxDxCxegedabagacad
+export LSCOLORS=dxfxcxdxbxegedabagacad
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+. ~/.git_completion
+. ~/.hub_completion
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -164,9 +159,3 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#--------------
-# Mac Settings
-#--------------
-
-# Add color to ls
-# alias ls='ls -G'
