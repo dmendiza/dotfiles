@@ -1,6 +1,7 @@
 # ~/.bash_aliases: alias file loaded by .bashrc
 
 alias vi=vim
+alias vagrant=/usr/bin/vagrant
 
 # ls stuff
 alias ll='ls -alF'
