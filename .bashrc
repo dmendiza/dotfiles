@@ -115,6 +115,8 @@ xterm*|rxvt*)
     ;;
 esac
 
+export PROMPT_COMMAND='echo -n [py:$(pyenv version-name)]'
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"

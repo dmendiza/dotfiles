@@ -2,6 +2,7 @@
 
 alias vi=vim
 alias vagrant=/usr/bin/vagrant
+alias docker='cd ~/Workspaces/Vagrant/docker; vagrant ssh'
 
 # ls stuff
 alias ll='ls -alF'
