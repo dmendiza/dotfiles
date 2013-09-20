@@ -12,6 +12,8 @@ esac
 # Environment Variables
 #-----------------------
 
+export EDITOR=vim
+
 # Java
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 
@@ -73,6 +75,9 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+# display pyenv and rbevn current status
+export PROMPT_COMMAND='echo -e "\033[0;36m[py:$(pyenv version-name)]\033[0;31m[rb:$(rbenv gemset active 2> /dev/null || rbenv version-name)]\033[0m"'
+
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
@@ -115,7 +120,6 @@ xterm*|rxvt*)
     ;;
 esac
 
-export PROMPT_COMMAND='echo -n [py:$(pyenv version-name)]'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
