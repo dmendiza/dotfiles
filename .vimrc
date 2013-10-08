@@ -9,4 +9,3 @@ set number
 
 let NERDTreeIgnore = ['\.pyc$']
 
-let g:pydiction_location = '~/.vim/pydiction-1.2'

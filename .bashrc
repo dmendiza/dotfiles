@@ -53,6 +53,9 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # Bash Settings
 #---------------
 
+# Set vi mode
+set -o vi
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
