@@ -2,7 +2,6 @@
 
 alias vi=vim
 alias vagrant=/usr/bin/vagrant
-alias docker='cd ~/Workspaces/Vagrant/docker; vagrant ssh'
 
 # ls stuff
 alias ll='ls -alF'
@@ -19,5 +18,9 @@ alias gu='git fetch upstream master'
 alias pv='pyenv version'
 alias pvs='pyenv versions'
 
+# Misc
 alias barb='cd ~/Workspaces/CloudKeep/barbican'
+
+alias t=tree
+alias t2='tree -L 2'
 
