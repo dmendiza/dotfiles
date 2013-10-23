@@ -42,12 +42,12 @@ export NODE_PATH=$HOME/local/node:$HOME/local/node/lib/node_modules
 
 export PATH
 
+# Ruby
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 # Python
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 export CONFIGURE_OPTS='--enable-shared'
-
-# Ruby
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 #---------------
 # Bash Settings
