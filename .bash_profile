@@ -1,7 +1,7 @@
 # ~/.bash_profile
 
 # Reset PATH to keep it from being clobbered in tmux
-if [ -f /etc/profile ]; then
+if [ -x /etc/libexec/path_helper ]; then
     PATH=''
     source /etc/profile
 fi
