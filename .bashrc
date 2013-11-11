@@ -15,7 +15,7 @@ esac
 export EDITOR=vim
 
 # Java
-export JAVA_HOME=/usr/local/lib/java
+export JAVA_HOME=`/usr/libexec/java_home`
 
 # Maven
 export M2_HOME=/usr/local/share/maven2
@@ -27,7 +27,9 @@ export GRADLE_HOME=/usr/local/lib/gradle
 PATH="$PATH:$GRADLE_HOME/bin"
 
 # Android Tools
-export ANDROID_HOME=/usr/local/lib/android
+if [ -d /usr/local/Library/android-sdk-macosx ]; then
+    export ANDROID_HOME=/usr/local/Library/android-sdk-macosx
+fi
 export ANDROID_TOOLS=$ANDROID_HOME/tools
 export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
 PATH="$PATH:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS"
@@ -79,7 +81,7 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # display pyenv and rbevn current status
-# export PROMPT_COMMAND='echo -e "\033[0;36m[py:$(pyenv version-name)]\033[0;31m[rb:$(rbenv gemset active 2> /dev/null || rbenv version-name)]\033[0m"'
+export PROMPT_COMMAND='echo -e "\033[0;36m[py:$(pyenv version-name)]\033[0;31m[rb:$(rbenv gemset active 2> /dev/null || rbenv version-name)]\033[0m"'
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -174,3 +176,7 @@ if [ -f ~/Workspaces/Git/hub/etc/hub.bash_completion.sh ]; then
     . ~/Workspaces/Git/hub/etc/hub.bash_completion.sh
 fi
 
+# Enable go completion
+if [ -f /usr/local/etc/bash_completion.d ]; then
+    . /usr/local/etc/bash_completion.d
+fi
