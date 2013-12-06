@@ -13,6 +13,7 @@ alias l='ls -CF'
 eval "$(hub alias -s)"
 alias gs='git status'
 alias gu='git fetch upstream master'
+alias cdgit='cd $(git rev-parse --show-toplevel)'
 
 # Python stuff
 alias pv='pyenv version'
