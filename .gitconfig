@@ -1,0 +1,9 @@
+[user]
+	name = Douglas Mendizabal
+	email = douglas.mendizabal@rackspace.com
+[color]
+	ui = true
+[gitreview]
+	username = dougmendizabal
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
