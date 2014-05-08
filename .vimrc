@@ -8,5 +8,8 @@ set shiftwidth=4
 set number
 set colorcolumn=80
 
+" Higlight trailing whitespace
+match ErrorMsg '\s\+$'
+
 let NERDTreeIgnore = ['\.pyc$']
 
