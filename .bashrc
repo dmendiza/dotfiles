@@ -18,12 +18,12 @@ if [ -x /usr/libexec/java_home ]; then
 fi
 
 # Maven
-export M2_HOME=/usr/local/share/maven2
+export M2_HOME=/usr/local/opt/maven2
 export M2=$M2_HOME/bin
 PATH="$PATH:$M2"
 
 # Gradle
-export GRADLE_HOME=/usr/local/lib/gradle
+export GRADLE_HOME=/usr/local/opt/gradle
 PATH="$PATH:$GRADLE_HOME/bin"
 
 # Android Tools
@@ -71,8 +71,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=20000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.

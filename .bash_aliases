@@ -21,6 +21,8 @@ alias pvs='pyenv versions'
 
 # Misc
 alias barb='cd ~/Workspaces/CloudKeep/barbican'
+alias bason='mv ~/.ssh/noconf ~/.ssh/config'
+alias basoff='mv ~/.ssh/config ~/.ssh/noconf'
 
 alias t=tree
 alias t2='tree -L 2'
