@@ -22,6 +22,10 @@ export M2_HOME=/usr/local/opt/maven2
 export M2=$M2_HOME/bin
 PATH="$PATH:$M2"
 
+# Go
+export GOPATH=$HOME/Workspaces/go
+PATH="$PATH:$GOPATH/bin"
+
 # Gradle
 export GRADLE_HOME=/usr/local/opt/gradle
 PATH="$PATH:$GRADLE_HOME/bin"
