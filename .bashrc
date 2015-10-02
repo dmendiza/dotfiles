@@ -12,13 +12,22 @@ esac
 
 export EDITOR=vim
 
+# Go
+if [ -d /usr/local/go/bin ]; then
+    PATH=$PATH:/usr/local/go/bin
+fi
+if [ -d $HOME/Workspaces/go ]; then
+    export GOPATH=$HOME/Workspaces/go
+    PATH=$PATH:$GOPATH/bin
+fi
+
 # Java
 if [ -x /usr/libexec/java_home ]; then
     export JAVA_HOME=`/usr/libexec/java_home`
 fi
 
 # Maven
-export M2_HOME=/usr/local/opt/maven2
+export M2_HOME=/usr/local/opt/maven
 export M2=$M2_HOME/bin
 PATH="$PATH:$M2"
 
@@ -185,3 +194,4 @@ fi
 if [ -f /usr/local/etc/bash_completion.d ]; then
     . /usr/local/etc/bash_completion.d
 fi
+
