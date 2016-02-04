@@ -61,11 +61,6 @@ export PATH
 export RBENV_ROOT="$HOME/.rbenv"
 export PATH="$RBENV_ROOT/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# Python
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 export CONFIGURE_OPTS='--enable-shared'
 
