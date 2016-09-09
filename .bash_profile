@@ -1,11 +1,11 @@
 # ~/.bash_profile
 
-# Terminal olors
+# Terminal colors
 CYAN="\033[0;36m"
 GREEN="\033[0;32m"
 NC="\033[0m" # No Color
 
-echo -e "${GREEN}[loading .bash_profile]${NC}"
+echo -e "Loading .bash_profile ... [${GREEN}OK${NC}]"
 
 # Reset PATH to keep it from being clobbered by path_helper
 # when creating new windows in tmux
