@@ -7,6 +7,8 @@ fi
 
 # User specific environment and startup programs
 
+set -o vi
+
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 export PATH
