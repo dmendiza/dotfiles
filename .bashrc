@@ -17,6 +17,13 @@ if [ -x /usr/libexec/path_helper ]; then
     source /etc/profile
 fi
 
+# devgun
+DEVGUNROOT=$HOME/.devgun
+PATH=$PATH:$DEVGUNROOT/bin
+alias cqlsh='kubectl exec --tty -i cassandra-0 -- /usr/local/bin/cqlsh.sh'
+alias etcdctl='kubectl exec etcd-0 -- /etcdctl'
+alias update_radar='kubectl exec radar-0 -- push_configs_devgun'
+
 # ls
 alias ls='ls -G'
 alias ll='ls -alF'
@@ -24,7 +31,13 @@ alias ll='ls -alF'
 # vim
 alias vi=vim
 
+# Git
+if [ -f $HOME/Workspaces/git/contrib/completion/git-completion.bash ]; then
+    source $HOME/Workspaces/git/contrib/completion/git-completion.bash
+fi
+alias gs='git status'
+
 # Go
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=/Users/douglas/Workspaces/go
-PATH=$PATH:$GOROOT/bin
+PATH=$PATH:$GOROOT/bin:$GOPATH/bin
