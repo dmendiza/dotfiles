@@ -15,13 +15,5 @@ NC="\033[0m"  # No Color
 # vim rules everything around me
 set -o vi
 
-PATH=$PATH:$HOME/.local/bin:$HOME/bin
-
 # pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 export PROMPT_COMMAND='echo -e "${CYAN}[py:$(pyenv version-name)]${NC}"'
-
-export PATH

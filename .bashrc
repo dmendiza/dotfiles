@@ -17,6 +17,8 @@ if [ -x /usr/libexec/path_helper ]; then
     source /etc/profile
 fi
 
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
+
 # devgun
 DEVGUNROOT=$HOME/.devgun
 PATH=$PATH:$DEVGUNROOT/bin
@@ -41,3 +43,10 @@ alias gs='git status'
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=/Users/douglas/Workspaces/go
 PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+export PATH
