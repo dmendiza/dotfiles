@@ -6,6 +6,8 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # User specific environment and startup programs
+export HISTCONTROL=ignoreboth
+export HISTFILESIZE=10000
 
 # Vim rules everything around me
 set -o vi
@@ -23,7 +25,7 @@ if [ -f $HOME/Workspaces/git/contrib/completion/git-completion.bash ]; then
 fi
 
 # GPG
-gpg-connect-agent /bye
+gpg-connect-agent updatestartuptty /bye
 gpg-agent --enable-ssh-support
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
