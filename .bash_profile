@@ -12,6 +12,8 @@ export HISTFILESIZE=10000
 # Vim rules everything around me
 set -o vi
 
+HISTSIZE=100000
+
 # Terminal colors
 CYAN="\033[0;36m"
 GREEN="\033[0;32m"
@@ -34,5 +36,8 @@ export PYENV_ROOT="$HOME/.pyenv"
 PATH="$PYENV_ROOT/bin:$PATH"
 export PROMPT_COMMAND='echo -e "${CYAN}[py:$(pyenv version-name)]${NC}"'
 eval "$(pyenv init -)"
+
+# vault
+PATH="$PATH:/opt/vault"
 
 export PATH
