@@ -7,12 +7,10 @@ fi
 
 # User specific environment and startup programs
 export HISTCONTROL=ignoreboth
-export HISTFILESIZE=10000
+export HISTFILESIZE=100000
 
 # Vim rules everything around me
 set -o vi
-
-HISTSIZE=100000
 
 # Terminal colors
 CYAN="\033[0;36m"
