@@ -35,7 +35,10 @@ PATH="$PYENV_ROOT/bin:$PATH"
 export PROMPT_COMMAND='echo -e "${CYAN}[py:$(pyenv version-name)]${NC}"'
 eval "$(pyenv init -)"
 
-# vault
+# Rust
+PATH="$PATH:$HOME/.cargo/bin"
+
+# Vault
 PATH="$PATH:/opt/vault"
 
 export PATH

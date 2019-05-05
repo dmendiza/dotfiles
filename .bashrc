@@ -18,4 +18,3 @@ alias ll='ls -alFZ'
 
 # vim
 alias vi=vim
-#
