@@ -25,9 +25,9 @@ if [ -f $HOME/Workspaces/git/contrib/completion/git-completion.bash ]; then
 fi
 
 # GPG
-gpg-connect-agent updatestartuptty /bye
-gpg-agent --enable-ssh-support
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+# gpg-connect-agent updatestartuptty /bye
+# gpg-agent --enable-ssh-support
+# export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
