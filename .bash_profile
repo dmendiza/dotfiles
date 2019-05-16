@@ -7,7 +7,7 @@ fi
 
 # User specific environment and startup programs
 export HISTCONTROL=ignoreboth
-export HISTFILESIZE=100000
+export HISTFILESIZE=10000
 
 # Vim rules everything around me
 set -o vi
