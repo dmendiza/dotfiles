@@ -24,6 +24,10 @@ if [ -f $HOME/Workspaces/git/contrib/completion/git-completion.bash ]; then
 	source $HOME/Workspaces/git/contrib/completion/git-completion.bash
 fi
 
+# golang
+export GOPATH=$HOME/Workspaces/go
+PATH="$PATH:$(go env GOPATH)/bin"
+
 # GPG
 # gpg-connect-agent updatestartuptty /bye
 # gpg-agent --enable-ssh-support
