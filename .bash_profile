@@ -34,10 +34,12 @@ PATH="$PATH:$(go env GOPATH)/bin"
 # export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
 # pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-PATH="$PYENV_ROOT/bin:$PATH"
-export PROMPT_COMMAND='echo -e "${CYAN}[py:$(pyenv version-name)]${NC}"'
-eval "$(pyenv init -)"
+if [ -d $HOME/.pyenv ]; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    PATH="$PYENV_ROOT/bin:$PATH"
+    export PROMPT_COMMAND='echo -e "${CYAN}[py:$(pyenv version-name)]${NC}"'
+    eval "$(pyenv init -)"
+fi
 
 # Rust
 PATH="$PATH:$HOME/.cargo/bin"
