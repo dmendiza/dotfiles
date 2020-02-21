@@ -25,8 +25,10 @@ if [ -f $HOME/Workspaces/git/contrib/completion/git-completion.bash ]; then
 fi
 
 # golang
-export GOPATH=$HOME/Workspaces/go
-PATH="$PATH:$(go env GOPATH)/bin"
+if [ -x "$(command -v go)" ]; then
+    export GOPATH=$HOME/Workspaces/go
+    PATH="$PATH:$(go env GOPATH)/bin"
+fi
 
 # GPG
 # gpg-connect-agent updatestartuptty /bye
