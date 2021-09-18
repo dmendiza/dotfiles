@@ -18,14 +18,3 @@ alias ll='ls -alFZ'
 
 # vim
 alias vi=vim
-
-# Functions
-
-pyenv_update() {
-  pushd $HOME/.pyenv
-  git pull
-  pushd $HOME/.pyenv/plugins/pyenv-virtualenv
-  git pull
-  popd
-  popd
-}

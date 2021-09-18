@@ -39,14 +39,12 @@ fi
 if [ -d $HOME/.pyenv ]; then
     export PYENV_ROOT="$HOME/.pyenv"
     PATH="$PYENV_ROOT/bin:$PATH"
-    export PROMPT_COMMAND='echo -e "${CYAN}[py:$(pyenv version-name)]${NC}"'
+    eval "$(pyenv init --path)"
     eval "$(pyenv init -)"
+    export PROMPT_COMMAND='echo -e "${CYAN}[py:$(pyenv version-name)]${NC}"'
 fi
 
 # Rust
 PATH="$PATH:$HOME/.cargo/bin"
-
-# Vault
-PATH="$PATH:/opt/vault"
 
 export PATH
